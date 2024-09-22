@@ -1,18 +1,13 @@
-## Getting Started
+# JAVA - Clase básica con encapsulamiento
+Se crearon tres clases: Main, Persona y Estudios. La clase Persona encapsula la información sobre los estudios de una persona, lo que mejora la modularidad y la mantenibilidad del código.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Herramientas Utilizadas
+1. Clases con atributos privados y objetos de otra clase, constructores, métodos setters y getters, y métodos para imprimir la información contenida en la clase.
 
-## Folder Structure
+2. **System.out.print("\033[H\033[2J")** Limpia la pantalla
 
-The workspace contains two folders by default, where:
+3. **Thread.sleep(5000)** Pausa de 10 segundos para visualizar y cambiar la información en pantalla de cada uno de las Personas.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+4. Estructura de control Try-Catch para capturar una **InterruptedException** lanzada por Thread.sleep() si el hilo es interrumpido mientras esta en pausa.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+6. **e.printStackTrace()** Este método es usado al capturar la excepción con el Try-Catch para tomar la información de la pila de llamadas e imprimirla en la consola, mostrando una lista de los métodos que se estaban ejecutando en ese momento, desde el más reciente hasta el más antiguo.
