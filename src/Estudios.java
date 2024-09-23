@@ -19,36 +19,36 @@ public class Estudios {
     }
 
     // GETTERS
-    String getInstitucion() {
+    public String getInstitucion() {
         return institucion;
     }
 
-    String getCurso() {
+    public String getCurso() {
         return curso;
     }
 
-    String getSeccion() {
+    public String getSeccion() {
         return seccion;
     }
 
-    int getAnio() {
+    public int getAnio() {
         return anio;
     }
 
     // SETTERS
-    void setInstitucion(String institucion) {
+    public void setInstitucion(String institucion) {
         this.institucion = institucion;
     }
 
-    void setCurso(String curso){
+    public void setCurso(String curso){
         this.curso = curso;
     }
 
-    void setSeccion(String seccion) {
+    public void setSeccion(String seccion) {
         this.seccion = seccion;
     }
 
-    void setAnio(int anio) {
+    public void setAnio(int anio) {
         this.anio = anio;
     }
 

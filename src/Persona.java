@@ -83,8 +83,8 @@ public class Persona {
         return edad;
     }
 
-    // SETTERS
 
+    // SETTERS
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -109,7 +109,7 @@ public class Persona {
         this.edad = edad;
     }
 
-    // IMPRIME
+    // MÉTODO IMPRIME
     public void imprimeV1() {
         System.out.print("\033[H\033[2J"); // Limpia la pantalla
         System.out.println("Identificación de la Persona: ");
