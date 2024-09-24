@@ -5,7 +5,7 @@ public class Alumno extends Persona {
 
     // CONSTRUCTOR CON COPIA DE LA CLASE PERSONA
     public Alumno(String id, Persona persona) {
-        super(persona); // El constructor de Alumno llama al constructor de Persona utilizando super
+        super(persona); // El constructor de Alumno llama al constructor de Persona utilizando "super"
         this.id = id;
     }
 

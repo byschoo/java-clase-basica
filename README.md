@@ -11,3 +11,9 @@ Se crearon tres clases: Main, Persona y Estudios. La clase Persona encapsula la 
 4. Estructura de control Try-Catch para capturar una **InterruptedException** lanzada por Thread.sleep() si el hilo es interrumpido mientras esta en pausa.
 
 6. **e.printStackTrace()** Este método es usado al capturar la excepción con el Try-Catch para tomar la información de la pila de llamadas e imprimirla en la consola, mostrando una lista de los métodos que se estaban ejecutando en ese momento, desde el más reciente hasta el más antiguo.
+
+7. **Jerarquía de clases** (Herencia) Se diseña la SuperClase Persona y una SubClase Alumno.
+
+8. **Constructor copia** Evita la duplicación de código en el constructor de Alumno. Facilita agregar nuevas subclases y modificar el comportamiento del método de impresiónV2 sin cambiar el código principal.
+
+9. **@Override** (Polimorfismo) Indica al compilador que el método está sobreescribiendo un método de una superclase para que se comporte de una manera diferente en la subclase.
