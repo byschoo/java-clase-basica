@@ -3,8 +3,8 @@ public class Main {
         Persona persona1 = new Persona("Raúl", "De Jesús", "Jiménez", "González", 'M', 17);
         Persona persona2 = new Persona();
         Persona persona3 = new Persona();
-        
         Estudios estudios1 = new Estudios("Isaac Peral","Bachillerato", 2, "B");
+        Alumno alumno1 = new Alumno("Y5944140B", persona1);
 
         persona2.setNombre("Sofía");
         persona2.setSegundoNombre("Valentina");
@@ -19,5 +19,6 @@ public class Main {
 
         persona1.estudios = estudios1;
         System.out.println("El estudiante " + persona1.imprimeV2() + " " + "estudia en: " + persona1.estudios.imprime());
+        System.out.println("El estudiante " + alumno1.imprimeV2() + " " + "estudia en: " + persona1.estudios.imprime());        
     }
 }

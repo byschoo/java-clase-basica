@@ -58,6 +58,16 @@ public class Persona {
         this.edad = edad;
     }
 
+    // CONSTRUCTOR COPIA
+    public Persona (Persona otraPersona) {
+        this.nombre = otraPersona.nombre;
+        this.segundoNombre = otraPersona.segundoNombre;
+        this.apellido = otraPersona.apellido;
+        this.segundoApellido = otraPersona.segundoApellido;
+        this.sexo = otraPersona.sexo;
+        this.edad = otraPersona.edad;
+    }
+
     // GETTERS
     public String getNombre() {
         return nombre;
