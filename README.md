@@ -8,7 +8,7 @@ Se crearon tres clases: Main, Persona y Estudios. La clase Persona encapsula la 
 
 3. **Thread.sleep(5000)** Pausa de 10 segundos para visualizar y cambiar la información en pantalla de cada uno de las Personas.
 
-4. Estructura de control Try-Catch para capturar una **InterruptedException** lanzada por Thread.sleep() si el hilo es interrumpido mientras esta en pausa.
+4. Estructura de control **Try-Catch** para capturar una **InterruptedException** lanzada por Thread.sleep() si el hilo es interrumpido mientras esta en pausa.
 
 6. **e.printStackTrace()** Este método es usado al capturar la excepción con el Try-Catch para tomar la información de la pila de llamadas e imprimirla en la consola, mostrando una lista de los métodos que se estaban ejecutando en ese momento, desde el más reciente hasta el más antiguo.
 
