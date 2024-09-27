@@ -17,3 +17,5 @@ Se crearon tres clases: Main, Persona y Estudios. La clase Persona encapsula la 
 8. **Constructor copia** Evita la duplicación de código en el constructor de Alumno. Facilita agregar nuevas subclases y modificar el comportamiento del método de impresiónV2 sin cambiar el código principal.
 
 9. **@Override** (Polimorfismo) Indica al compilador que el método está sobreescribiendo un método de una superclase para que se comporte de una manera diferente en la subclase.
+
+10. Atributos y Métodos **Static** Los atributos estáticos pertenecen a la clase en sí, no a las instancias de la clase. Son compartidos por todos los objetos de esa clase. No se puede hacer método setter de un atributo Static. Si, Getter para obtenerlo.

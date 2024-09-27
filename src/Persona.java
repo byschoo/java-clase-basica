@@ -8,9 +8,18 @@ public class Persona {
 
     private char sexo;
     private int edad;
-    Estudios estudios;
+
     // La clase Persona encapsula la información sobre los estudios de una persona,
     // lo que mejora la modularidad y la mantenibilidad del código.
+    Estudios estudios;
+
+    // Atributo de la clase que se mantiene estático en memoria, si no fuese estático
+    // volvería al valor de "0" cada vez que instaciemos la clase. Por lo contrario,
+    // Static mantiene su valor y añade uno cada vez que sea instaciada la clase.
+    // Los atributos estáticos pertenecen a la clase en sí, no a las instancias de
+    // la clase. Son compartidos por todos los objetos de esa clase. No se puede
+    // hacer método setter de un atributo Static. Si, Getter para obtenerlo.
+    private static int contPersonas = 0;
 
     // CONSTRUCTORES
     public Persona() {
@@ -20,6 +29,7 @@ public class Persona {
         segundoApellido = "Desconocido";
         sexo = ' ';
         edad = 0;
+        contPersonas++;
     }
 
     public Persona(String nombre, String apellido, String segundoApellido) {
@@ -29,6 +39,7 @@ public class Persona {
         this.segundoApellido = segundoApellido;
         sexo = ' ';
         edad = 0;
+        contPersonas++;
     }
 
     public Persona(String nombre, String segundoNombre, String apellido, String segundoApellido) {
@@ -38,6 +49,7 @@ public class Persona {
         this.segundoApellido = segundoApellido;
         sexo = ' ';
         edad = 0;
+        contPersonas++;
     }
 
     public Persona(String nombre, String segundoNombre, String apellido, String segundoApellido, char sexo) {
@@ -47,6 +59,7 @@ public class Persona {
         this.segundoApellido = segundoApellido;
         this.sexo = sexo;
         edad = 0;
+        contPersonas++;
     }
 
     public Persona(String nombre, String segundoNombre, String apellido, String segundoApellido, char sexo, int edad) {
@@ -56,10 +69,11 @@ public class Persona {
         this.segundoApellido = segundoApellido;
         this.sexo = sexo;
         this.edad = edad;
+        contPersonas++;
     }
 
     // CONSTRUCTOR COPIA
-    public Persona (Persona otraPersona) {
+    public Persona(Persona otraPersona) {
         this.nombre = otraPersona.nombre;
         this.segundoNombre = otraPersona.segundoNombre;
         this.apellido = otraPersona.apellido;
@@ -93,6 +107,9 @@ public class Persona {
         return edad;
     }
 
+    public static int getContPersonas() {
+        return contPersonas;
+    }
 
     // SETTERS
     public void setNombre(String nombre) {
