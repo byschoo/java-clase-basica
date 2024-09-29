@@ -13,12 +13,10 @@ public class Persona {
     // lo que mejora la modularidad y la mantenibilidad del código.
     Estudios estudios;
 
-    // Atributo de la clase que se mantiene estático en memoria, si no fuese estático
-    // volvería al valor de "0" cada vez que instaciemos la clase. Por lo contrario,
-    // Static mantiene su valor y añade uno cada vez que sea instaciada la clase.
-    // Los atributos estáticos pertenecen a la clase en sí, no a las instancias de
-    // la clase. Son compartidos por todos los objetos de esa clase. No se puede
-    // hacer método setter de un atributo Static. Si, Getter para obtenerlo.
+    // Atributo Static indica que los valores se mantendran en memoria durante la 
+    // ejecución de la aplicación, pertenecen a la clase en sí, no a las instancias 
+    // de la clase. Son compartidos por todos los objetos de esa clase. No se puede 
+    // hacer método setter de un atributo Static. Si, Getter para obtnerlo.
     private static int contPersonas = 0;
 
     // CONSTRUCTORES
@@ -107,6 +105,11 @@ public class Persona {
         return edad;
     }
 
+    // Los atributos estáticos pertenecen a la clase en sí, no a las instancias de
+    // la clase. por lo que puede ser llamado directamente a través de la clase 
+    // sin necesidad de crear una instancia de la misma. Los métodos static no 
+    // pueden acceder a variables de instancia directamente, ya que pertenecen a 
+    // la clase, no a objetos específicos.
     public static int getContPersonas() {
         return contPersonas;
     }
@@ -151,7 +154,7 @@ public class Persona {
         // interrumpido mientras está durmiendo. Se encierra la llamada a
         // Thread.sleep() dentro de un bloque try-catch para capturar esta excepción.
         try {
-            Thread.sleep(5000); // Pausa de 10 segundos
+            Thread.sleep(2500); // Pausa de 2.5 segundos
         }
 
         // e.printStackTrace() Este método toma la información de la pila de llamadas y
