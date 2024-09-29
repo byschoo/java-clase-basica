@@ -19,3 +19,5 @@ Se crearon tres clases: Main, Persona y Estudios. La clase Persona encapsula la 
 9. **@Override** (Polimorfismo) Indica al compilador que el método está sobreescribiendo un método de una superclase para que se comporte de una manera diferente en la subclase.
 
 10. Atributos y Métodos **Static** Los atributos estáticos pertenecen a la clase en sí, no a las instancias de la clase. Son compartidos por todos los objetos de esa clase. No se puede hacer método setter de un atributo Static. Si, Getter para obtenerlo.
+
+11. Se crea la **clase abstracta Beca** y la usamos para crear una **clase ProcesarBecas** que se encarga de cumplir el comportamiento exigido por la clase abstracta y establece de acuerdo a las notas definitiva si el estudiante es elegible a una beca estudiantil.
