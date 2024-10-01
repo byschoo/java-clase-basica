@@ -1,7 +1,6 @@
 
 // SUBCLASE DE PERSONA Y SUPERCLASE DE BECA
 public class Alumno extends Persona {
-
     private String id;
     private double notaDefinitiva;
 

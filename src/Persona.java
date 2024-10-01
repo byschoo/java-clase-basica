@@ -2,7 +2,6 @@ public class Persona {
 
     // ATRIBUTOS
     private String nombre,
-            segundoNombre,
             apellido,
             segundoApellido;
 
@@ -13,80 +12,61 @@ public class Persona {
     // lo que mejora la modularidad y la mantenibilidad del código.
     Estudios estudios;
 
-    // Atributo Static indica que los valores se mantendran en memoria durante la 
-    // ejecución de la aplicación, pertenecen a la clase en sí, no a las instancias 
-    // de la clase. Son compartidos por todos los objetos de esa clase. No se puede 
+    // Atributo Static indica que los valores se mantendran en memoria durante la
+    // ejecución de la aplicación, pertenecen a la clase en sí, no a las instancias
+    // de la clase. Son compartidos por todos los objetos de esa clase. No se puede
     // hacer método setter de un atributo Static. Si, Getter para obtnerlo.
     private static int contPersonas = 0;
 
+
     // CONSTRUCTORES
-    public Persona() {
-        nombre = "Desconocido";
-        segundoNombre = "Desconocido";
-        apellido = "Desconocido";
-        segundoApellido = "Desconocido";
-        sexo = ' ';
-        edad = 0;
-        contPersonas++;
+    // Se validan los argumentos recibidos al instaciar la clase a través de los métodos setters.
+    public Persona(String nombre, String apellido, String segundoApellido, char sexo, int edad) {
+        setNombre(nombre);
+        setApellido(apellido);
+        setSegundoApellido(segundoApellido);
+        setSexo(sexo);
+        setEdad(edad);
+        Persona.contPersonas++;
+    }
+
+    // This() hace la llamada al constructor que reciba la misma cantidad de
+    // parámetros dentro de su misma clase. Ahorramos duplicación de código
+    // innecesario
+    public Persona(String nombre, String apellido, String segundoApellido, char sexo) {
+        this(nombre, apellido, segundoApellido, sexo, 0);
     }
 
     public Persona(String nombre, String apellido, String segundoApellido) {
-        this.nombre = nombre;
-        this.segundoNombre = "";
-        this.apellido = apellido;
-        this.segundoApellido = segundoApellido;
-        sexo = ' ';
-        edad = 0;
-        contPersonas++;
+        this(nombre, apellido, segundoApellido, 'N', 0);
     }
 
-    public Persona(String nombre, String segundoNombre, String apellido, String segundoApellido) {
-        this.nombre = nombre;
-        this.segundoNombre = segundoApellido;
-        this.apellido = apellido;
-        this.segundoApellido = segundoApellido;
-        sexo = ' ';
-        edad = 0;
-        contPersonas++;
+    public Persona(String nombre, String apellido) {
+        this(nombre, apellido, "N/A", 'N', 0);
     }
 
-    public Persona(String nombre, String segundoNombre, String apellido, String segundoApellido, char sexo) {
-        this.nombre = nombre;
-        this.segundoNombre = segundoApellido;
-        this.apellido = apellido;
-        this.segundoApellido = segundoApellido;
-        this.sexo = sexo;
-        edad = 0;
-        contPersonas++;
+    public Persona(String nombre) {
+        this(nombre, "N/A", "N/A", 'N', 0);
     }
 
-    public Persona(String nombre, String segundoNombre, String apellido, String segundoApellido, char sexo, int edad) {
-        this.nombre = nombre;
-        this.segundoNombre = segundoNombre;
-        this.apellido = apellido;
-        this.segundoApellido = segundoApellido;
-        this.sexo = sexo;
-        this.edad = edad;
-        contPersonas++;
+    public Persona() {
+        this("N/A", "N/A", "N/A", 'N', 0);
     }
+
 
     // CONSTRUCTOR COPIA
     public Persona(Persona otraPersona) {
         this.nombre = otraPersona.nombre;
-        this.segundoNombre = otraPersona.segundoNombre;
         this.apellido = otraPersona.apellido;
         this.segundoApellido = otraPersona.segundoApellido;
         this.sexo = otraPersona.sexo;
         this.edad = otraPersona.edad;
     }
 
+
     // GETTERS
     public String getNombre() {
         return nombre;
-    }
-
-    public String getSegundoNombre() {
-        return segundoNombre;
     }
 
     public String getApellido() {
@@ -106,9 +86,9 @@ public class Persona {
     }
 
     // Los atributos estáticos pertenecen a la clase en sí, no a las instancias de
-    // la clase. por lo que puede ser llamado directamente a través de la clase 
-    // sin necesidad de crear una instancia de la misma. Los métodos static no 
-    // pueden acceder a variables de instancia directamente, ya que pertenecen a 
+    // la clase. por lo que puede ser llamado directamente a través de la clase
+    // sin necesidad de crear una instancia de la misma. Los métodos static no
+    // pueden acceder a variables de instancia directamente, ya que pertenecen a
     // la clase, no a objetos específicos.
     public static int getContPersonas() {
         return contPersonas;
@@ -116,27 +96,38 @@ public class Persona {
 
     // SETTERS
     public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setSegundoNombre(String segundoNombre) {
-        this.segundoNombre = segundoNombre;
+        if (nombre != null) {
+            this.nombre = nombre;
+        } else
+            this.nombre = "ERROR";
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        if (apellido != null) {
+            this.apellido = apellido;
+        } else
+            this.apellido = "ERROR";
     }
 
     public void setSegundoApellido(String segundoApellido) {
-        this.segundoApellido = segundoApellido;
+        if (segundoApellido != null) {
+            this.segundoApellido = segundoApellido;
+        } else
+            this.segundoApellido = "ERROR";
     }
 
     public void setSexo(char sexo) {
-        this.sexo = sexo;
+        if (sexo != ' ') {
+            this.sexo = sexo;
+        } else
+            this.sexo = '*';
     }
 
     public void setEdad(int edad) {
-        this.edad = edad;
+        if (edad > 0) {
+            this.edad = edad;
+        } else
+            this.edad = 0;
     }
 
     // MÉTODO IMPRIME
@@ -144,7 +135,6 @@ public class Persona {
         System.out.print("\033[H\033[2J"); // Limpia la pantalla
         System.out.println("Identificación de la Persona: ");
         System.out.println("Nombre: " + this.nombre);
-        System.out.println("Segundo Nombre: " + this.segundoNombre);
         System.out.println("Apellido: " + this.apellido);
         System.out.println("Segundo Apellido: " + this.segundoApellido);
         System.out.println("Sexo: " + this.sexo);
@@ -166,6 +156,6 @@ public class Persona {
     }
 
     public String imprimeV2() {
-        return nombre + " " + segundoNombre + " " + apellido + " " + segundoApellido;
+        return nombre + " " + apellido + " " + segundoApellido;
     }
 }

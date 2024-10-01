@@ -2,13 +2,12 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         // Se crean los objetos
-        Persona persona1 = new Persona("Raúl", "De Jesús", "Jiménez", "González", 'M', 17);
+        Persona persona1 = new Persona("Raúl De Jesús", "Jiménez", "González", 'M', 17);
         Persona persona2 = new Persona();
         Estudios estudios1 = new Estudios("Isaac Peral", "Bachillerato", 2, "B");
         Alumno alumno1 = new Alumno("Y5944140B", persona1, 9);
 
-        persona2.setNombre("Sofía");
-        persona2.setSegundoNombre("Valentina");
+        persona2.setNombre("Sofía Valentina");
         persona2.setApellido("Jiménez");
         persona2.setSegundoApellido("González");
         persona2.setSexo('F');
@@ -33,6 +32,5 @@ public class Main {
         // notas definitiva es elegible a una Beca
         ProcesarBecas procesarBecas = new ProcesarBecas();
         procesarBecas.isElegible(alumno1.getNotaDefinitiva());
-
     }
 }
