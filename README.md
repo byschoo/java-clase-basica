@@ -25,3 +25,5 @@ Se crearon tres clases: Main, Persona y Estudios. La clase Persona encapsula la 
 12. Se validan los argumentos recibidos al instaciar la clase a través de los métodos setters del constructor principal.
 
 13. This() es usado por todos los contructores secundarios para inicializar los valores a través del constructor principal. Ahorramos duplicación de código innecesario.
+
+14. Se usa la interfaz **IclasesEspeciales** para presentar las clases especiales electivas por el alumno.
