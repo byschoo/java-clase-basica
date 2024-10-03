@@ -1,12 +1,14 @@
 
 // SUBCLASE DE PERSONA Y SUPERCLASE DE BECA
-public class Alumno extends Persona {
+
+import Interfaces.IclasesEspeciales;
+
+public class Alumno extends Persona implements IclasesEspeciales {
     private String id;
     private double notaDefinitiva;
 
     // CONSTRUCTORES
-    public Alumno() {
-    }
+    public Alumno() {}
 
     // CONSTRUCTOR CON COPIA DE LA CLASE PERSONA
     public Alumno(String id, Persona persona, double notaDefinitiva) {
@@ -40,4 +42,14 @@ public class Alumno extends Persona {
     public String imprimeV2() {
         return id + " tiene Notas Definitiva de " + notaDefinitiva;
     }
+
+    @Override
+    public void claseEspecialIdiomas() {
+        System.out.println("El estudiante puede elegir clases especiales de Idiomas: Inglés, Francés o Alemán");
+    }
+    
+    @Override
+    public void claseEspecialDeportivas() {
+        System.out.println("El estudiante puede elegir clases especiales Deportivas: Fútbol, Baloncesto o Natación");
+    }    
 }
